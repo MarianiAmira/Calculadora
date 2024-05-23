@@ -5,7 +5,7 @@ flag_segundo_numero = False
 flag_operacion = False
 seguir = "s"
 
-while seguir == "s":
+while seguir ==  "s":
     match calculadora():
         case "a":
             primer_operando = ingresar_primero_operador()
@@ -17,12 +17,21 @@ while seguir == "s":
             else:
                 print("Primero tiene que ingresar el primer operando...")
         case "c":
-            if flag_primer_numero and flag_segundo_numero:
+            if not flag_primer_numero and not flag_segundo_numero:
+                print("Primero tiene que ingresar el primer y segundo operando...")
+            elif not flag_segundo_numero :
+                print("Debe ingresar primero el segundo operador...")
+            else:
+                mensaje_opciones_operaciones()
+                resultado = operacion_elegida(primer_operando, segundo_operando)
+                flag_operacion = True
+
+            '''if flag_primer_numero and flag_segundo_numero:
                 mensaje_opciones_operaciones()
                 resultado = operacion_elegida(primer_operando, segundo_operando)
                 flag_operacion = True
             else:
-                print("Primero tiene que ingresar el primer y segundo operando...")
+                print("Primero tiene que ingresar el primer y segundo operando...")'''
         case "d":
             if flag_primer_numero and flag_segundo_numero and flag_operacion:
                 mostrar_resultado(resultado)

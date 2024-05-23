@@ -26,6 +26,17 @@ def mensaje_opciones_operaciones():
 
 def operacion_elegida(a:int, b:int)->int:
     operacion_elegida = input("Eliga la operacion que desea: ")
+    resultado = 0
+
+    while resultado < 1 or resultado > 4:
+        print("Error, debe elegir entre 1 o 4")
+        operacion_elegida = input("Eliga la operacion que desea: ")
+
+        try:
+            resultado = int(operacion_elegida)
+        except ValueError:
+            resultado = 0
+
     match operacion_elegida:
         case "1":
             resultado = a + b
