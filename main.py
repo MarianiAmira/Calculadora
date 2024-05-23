@@ -25,13 +25,6 @@ while seguir ==  "s":
                 mensaje_opciones_operaciones()
                 resultado = operacion_elegida(primer_operando, segundo_operando)
                 flag_operacion = True
-
-            '''if flag_primer_numero and flag_segundo_numero:
-                mensaje_opciones_operaciones()
-                resultado = operacion_elegida(primer_operando, segundo_operando)
-                flag_operacion = True
-            else:
-                print("Primero tiene que ingresar el primer y segundo operando...")'''
         case "d":
             if flag_primer_numero and flag_segundo_numero and flag_operacion:
                 mostrar_resultado(resultado)
